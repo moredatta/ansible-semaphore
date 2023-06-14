@@ -12,7 +12,7 @@ services:
       - MYSQL_RANDOM_ROOT_PASSWORD=yes
       - MYSQL_DATABASE=semaphore
       - MYSQL_USER=semaphore
-      - MYSQL_PASSWORD=secret-password  # change!
+      - MYSQL_PASSWORD=test1234  # change!
     restart: unless-stopped
   semaphore:
     container_name: ansiblesemaphore
@@ -22,13 +22,13 @@ services:
       - 3000:3000
     environment:
       - SEMAPHORE_DB_USER=semaphore
-      - SEMAPHORE_DB_PASS=secret-password  # change!
+      - SEMAPHORE_DB_PASS=test1234  # change!
       - SEMAPHORE_DB_HOST=mysql
       - SEMAPHORE_DB_PORT=3306
       - SEMAPHORE_DB_DIALECT=mysql
       - SEMAPHORE_DB=semaphore
       - SEMAPHORE_PLAYBOOK_PATH=/tmp/semaphore/
-      - SEMAPHORE_ADMIN_PASSWORD=secret-admin-password  # change!
+      - SEMAPHORE_ADMIN_PASSWORD=test1234  # change!
       - SEMAPHORE_ADMIN_NAME=admin
       - SEMAPHORE_ADMIN_EMAIL=admin@localhost
       - SEMAPHORE_ADMIN=admin
